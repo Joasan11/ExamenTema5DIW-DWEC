@@ -19,6 +19,9 @@ const validar = (evento) => {
     evento.preventDefault();
     mensajesError = [];
 
+    // Nombre como campo obligatorio
+    nombre.value.trim().length === 0 && mensajesError.push("El nombre es un campo obligatorio");
+
     // Nombre con caracteres válidos
     !/^[A-Z]+[a-z0-9]*$/.test(nombre.value.trim()) && mensajesError.push("Error en el nombre");
 
