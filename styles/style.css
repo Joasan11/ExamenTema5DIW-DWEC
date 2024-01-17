@@ -99,6 +99,6 @@ button:hover{
     color: black;
 }
 
-.error{
+#error{
     color: red;
 }

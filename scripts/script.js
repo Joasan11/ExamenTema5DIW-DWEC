@@ -19,17 +19,14 @@ const validar = (evento) => {
     evento.preventDefault();
     mensajesError = [];
 
-    // Nombre como campo obligatorio
-    nombre.value.trim().length === 0 && mensajesError.push("El nombre es un campo obligatorio");
-
     // Nombre con caracteres válidos
-    !/^[A-Za-z0-9]*$/.test(nombre.value.trim()) && mensajesError.push("Error en el nombre");
+    !/^[A-Z]+[a-z0-9]*$/.test(nombre.value.trim()) && mensajesError.push("Error en el nombre");
 
     // Correo electrónico válido
     !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(correo.value.trim()) && mensajesError.push("Error en el correo electrónico");
 
     // No hay ninguna opcion seleccionada
-    /*if(radio.isConnected = null && !radio2.isConnected){
+    /*if(!radio.isConnected() && !radio2.isConnected()){
         mensajesError.push("Es obligatorio que un radioButton este selecionado");
     }*/
 
