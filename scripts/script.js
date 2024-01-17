@@ -25,12 +25,16 @@ const validar = (evento) => {
     // Nombre con caracteres válidos
     !/^[A-Z]+[a-z0-9]*$/.test(nombre.value.trim()) && mensajesError.push("Error en el nombre");
 
-    // Correo electrónico válido
+    // Correo electronico válido
     !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(correo.value.trim()) && mensajesError.push("Error en el correo electrónico");
 
-    // No hay ninguna opcion seleccionada
-    /*if(!radio.isConnected() && !radio2.isConnected()){
-        mensajesError.push("Es obligatorio que un radioButton este selecionado");
+    // No hay ninguna opcion seleccionada en los radio button
+    /*let radios = document.querySelector(!'radio:checked');
+    if(!radio){
+        mensajesError.push("Es obligatorio selecionar un radioButton")
+    }
+    else{
+
     }*/
 
     // Evitar mensajes cortos
@@ -49,4 +53,14 @@ const validar = (evento) => {
     }
 }
 
+function mostrarSelecionado(){
+    if(document.getElementById("radio").checked){
+        alert("Has selecionado el primer radio button");
+    }
+    if(document.getElementById("radio2").checked){
+        alert("Has selecionado el segundo radio button");
+    }
+}
+
+formulario.addEventListener("info", mostrarSelecionado);
 formulario.addEventListener("submit", validar);

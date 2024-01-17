@@ -1,8 +1,10 @@
 :root {
-    --h1-font-size: 7rem;
+    --h1-font-size: 6rem;
+    --span-font-size: 3.5rem;
+    --input-size: 20.75rem;
     --h1-color: #ffffff;
-    --span-font-size: 2.5rem;
     --span-color: #ffffff;
+    --button-color: #ffffff;
     --form-background: #000000;
 }
 
@@ -10,6 +12,7 @@
     :root {
         --h1-font-size: 2.5rem;
         --span-font-size: 1.75rem;
+        --input-size: 10.8rem;
     }
 }
 
@@ -17,7 +20,7 @@
 ::after,
 ::before {
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT';
+    font-family: 'Instrument Serif', sans-serif;
 }
 
 body {
@@ -26,8 +29,9 @@ body {
 
 .hero-container {
     background: url(../img/suwiii.jpg) center/cover;
-    position: relative;
     height: 100vh;
+    position: relative;
+    clip-path: circle(65%);
 }
 
 .hero-container::before {
@@ -36,16 +40,16 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .hero-body {
-    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 h1 {
@@ -59,46 +63,67 @@ span {
     font-size: var(--span-font-size);
 }
 
-.main-formulario{
-    background-color: black;
+.main-formulario {
     text-align: center;
-    align-items: center;
+    background-color: var(--form-background);
+    padding: 30px;
+    border: 2px solid #000000;
+    margin: auto;
+    margin-top: -70px;
+}
+
+form {
+    max-width: 600px;
     margin: auto;
 }
 
-h2{
-    font-family: 'Courier New';
-    color: #ffffff;
-    font-size: 23px;
-    text-align: center;
+label {
+    color: var(--h1-color);
+    display: block;
+    margin-top: 10px;
 }
 
-input, 
-textarea{
+input,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
     margin-top: 5px;
-    border: 1px solid #e8e8e8;
-    border-radius: 3px;
-}
-
-label{
-    color: white;
-    font-family: Georgia;
-    font-size: 13px;
-    text-align: center;
-}
-
-button{
+    margin-bottom: 15px;
     border: 1px solid #000000;
-    border-radius: 3px;
-    background-color: white;
-    color: black;
+    border-radius: 4px;
 }
 
-button:hover{
-    background-color: #bcbcbc;
-    color: black;
+textarea {
+    resize: vertical;
 }
 
-#error{
+input[type="radio"] {
+    cursor: pointer;
+    size: 15px;
+}
+
+input[type="submit"] {
+    background-color: var(--button-color);
+    color: #000000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#error {
     color: red;
+    list-style-type: none;
+    padding: 0;
+}
+
+#error li {
+    color: red;
+    margin-top: 5px;
 }
